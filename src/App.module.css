@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.wrapper > * {
+  margin: 0 10px;
+  flex: 1 100%;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 120px;
+}
+
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+  height: 300px;
+  font-size: 24px;
+}
+
+.aside {
+  background: gold;
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 2;
+    order: 1;
+  }
+
+  .footer {
+    order: 3;
+  }
+
+  .aside {
+    flex: 1;
+    order: 2;
+  }
+}
