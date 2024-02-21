@@ -1,29 +1,18 @@
+import { useState } from 'react';
 import styles from './App.module.css';
-import IMAGES from './images/Images.jsx';
+import Header from './components/Header.jsx';
+import SearchBar from './components/SearchBar.jsx';
 
 function App() {
+  const [query, setQuery] = useState('');
+
   return (
     <>
       <div className={styles.wrapper}>
-        <header className={styles.header}>
-          <img src={IMAGES.logo} alt="logo pokemon" className={styles.logo} />
-        </header>
+        <Header />
 
         <main className={styles.main}>
-          <form className={styles.searchForm}>
-            <input
-              type="text"
-              name=""
-              placeholder="Search your pokemon"
-              className={styles.searchInput}
-            />
-            <input
-              type="image"
-              src={IMAGES.searchIcon}
-              className={styles.searchIcon}
-              alt="search button"
-            />
-          </form>
+          <SearchBar query={query} setQuery={setQuery} />
         </main>
 
         <aside className={styles.aside}>
