@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './App.module.css';
 import Header from './components/Header.jsx';
+import PokemonGrid from './components/PokemonGrid.jsx';
 import SearchBar from './components/SearchBar.jsx';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
         <main className={styles.main}>
           <SearchBar query={query} setQuery={setQuery} />
+          <PokemonGrid />
         </main>
 
         <aside className={styles.aside}>

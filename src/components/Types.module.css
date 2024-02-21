@@ -1,0 +1,14 @@
+.type {
+  padding: 6px 10px;
+  font-size: 18px;
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+.grass {
+  background-color: #a8f08a;
+}
+
+.poison {
+  background-color: #c58af0;
+}
