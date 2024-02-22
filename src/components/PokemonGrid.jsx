@@ -1,16 +1,20 @@
-import IMAGES from '../images/Images';
 import PokemonCard from './PokemonCard';
 import styles from './PokemonGrid.module.css';
 
-const PokemonGrid = () => {
+const PokemonGrid = ({ pokemons }) => {
+  const firstGeneration = pokemons.slice(0, 151);
+  console.log(firstGeneration);
   return (
     <section className={styles.cardsWrapper}>
-      <PokemonCard
-        picture={IMAGES.pokePic}
-        pokedexNum={'N°001'}
-        pokemonName={'Bulbasaur'}
-        types={['Grass', 'Poison']}
-      />
+      {[...firstGeneration].map((pokemon) => (
+        <PokemonCard
+          key={pokemon.id}
+          picture={pokemon.imgSrc}
+          pokedexNum={`N° ${pokemon.id}`}
+          pokemonName={pokemon.name}
+          types={pokemon.types}
+        />
+      ))}
     </section>
   );
 };

@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './App.module.css';
+import { fetchPokemons } from './api/fetchPokemons.js';
 import Header from './components/Header.jsx';
 import PokemonGrid from './components/PokemonGrid.jsx';
 import SearchBar from './components/SearchBar.jsx';
 
 function App() {
   const [query, setQuery] = useState('');
+  const [pokemons, setPokemons] = useState('');
+
+  useEffect(() => {
+    const fetchAllPokemons = async () => {
+      const allPokemons = await fetchPokemons();
+      setPokemons(allPokemons);
+    };
+
+    fetchAllPokemons();
+  }, []);
 
   return (
     <>
@@ -14,7 +25,7 @@ function App() {
 
         <main className={styles.main}>
           <SearchBar query={query} setQuery={setQuery} />
-          <PokemonGrid />
+          <PokemonGrid pokemons={pokemons} />
         </main>
 
         <aside className={styles.aside}>
