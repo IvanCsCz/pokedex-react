@@ -1,0 +1,11 @@
+.cardsWrapper {
+  padding: 15px;
+}
+
+.pokemonGrid {
+  display: grid;
+  place-items: center;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
