@@ -35,14 +35,6 @@ function App() {
           <SearchBar query={query} setQuery={setQuery} />
           <PokemonGrid pokemons={pokemons} query={query} />
         </main>
-
-        <aside className={styles.aside}>
-          <p>aside</p>
-        </aside>
-
-        <footer className={styles.footer}>
-          <p>footer</p>
-        </footer>
       </div>
     </>
   );
