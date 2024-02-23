@@ -21,8 +21,6 @@ const SearchBar = ({ query, setQuery }) => {
         alt="search button"
         onClick={(e) => {
           e.preventDefault();
-          console.log(query);
-          setQuery('');
         }}
       />
     </form>
